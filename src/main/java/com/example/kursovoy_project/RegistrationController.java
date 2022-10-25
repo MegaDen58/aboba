@@ -1,5 +1,6 @@
 package com.example.kursovoy_project;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -40,9 +41,23 @@ public class RegistrationController {
 
     @FXML
     public void Registration() {
-        JOptionPane.showMessageDialog(null, "Регистрация успешно завершена!");
+        JOptionPane.showMessageDialog(null, "Регистрация успешно завершена! Вернитесь на главную страницу и авторизуйтесь!");
     }
     public void backButton(){
+        try {
+            Stage stageToClose = (Stage) btnBackRole.getScene().getWindow();
+            stageToClose.close();
 
+            Stage stage = new Stage();
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            Pane root = fxmlLoader.load(getClass().getResource("role.fxml").openStream());
+            Scene scene = new Scene(root, 700, 400);
+            stage.setScene(scene);
+            stage.setTitle("Authorization");
+            stage.setResizable(false);
+            stage.show();
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
     }
 }

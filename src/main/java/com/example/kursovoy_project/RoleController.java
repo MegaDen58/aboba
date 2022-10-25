@@ -32,6 +32,9 @@ public class RoleController {
     @FXML
     public void registrationUser() {
         try {
+            Stage stageToClose  = (Stage) btnRegistration.getScene().getWindow();
+            stageToClose.close();
+
             Stage stage = new Stage();
             FXMLLoader fxmlLoader = new FXMLLoader();
             Pane root = fxmlLoader.load(getClass().getResource("registration-window.fxml").openStream());
@@ -39,18 +42,29 @@ public class RoleController {
             stage.setScene(scene);
             stage.setTitle("Authorization");
             stage.show();
+            stage.setResizable(false);
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
     }
     public void roleSelection(){
         try {
+            Stage stageToCloseAdmin = (Stage) btnAdmin.getScene().getWindow();
+            stageToCloseAdmin.close();
+
+            Stage stageToCloseExecutor = (Stage) btnExecutor.getScene().getWindow();
+            stageToCloseExecutor.close();
+
+            Stage stageToCloseClient = (Stage) btnClient.getScene().getWindow();
+            stageToCloseClient.close();
+
             Stage stage = new Stage();
             FXMLLoader fxmlLoader = new FXMLLoader();
             Pane root = fxmlLoader.load(getClass().getResource("authorization-window.fxml").openStream());
             Scene scene = new Scene(root, 700, 400);
             stage.setScene(scene);
             stage.setTitle("Authorization");
+            stage.setResizable(false);
             stage.show();
         } catch (Exception ex) {
             System.out.println(ex.getMessage());

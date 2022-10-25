@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kursovoy_project.UserRequestFormController">
+<AnchorPane prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kursovoy_project.UserRequestFormController">
    <children>
       <AnchorPane prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #DEB887;">
          <children>
@@ -23,8 +22,12 @@
                         <Font name="System Italic" size="23.0" />
                      </font>
                   </Label>
-                  <ComboBox fx:id="choiceOfServicesList" layoutX="254.0" layoutY="71.0" prefHeight="36.0" prefWidth="424.0" promptText="Выберите услугу" />
-                  <Button fx:id="btnSendAnRequest" layoutX="533.0" layoutY="244.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="147.0" text="Отправить заявку" />
+                  <ComboBox fx:id="choiceOfServicesList" layoutX="254.0" layoutY="71.0" prefHeight="36.0" prefWidth="424.0" promptText="Выберите услугу" style="-fx-background-color: #FFE4B5;" />
+                  <Button fx:id="regButton" layoutX="524.0" layoutY="245.0" mnemonicParsing="false" onAction="#Registration" prefHeight="47.0" prefWidth="154.0" style="-fx-background-color: #F0E68C;" text="Отправить заявку">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
                </children>
             </AnchorPane>
             <Label layoutX="269.0" layoutY="14.0" text="АЭРКОМ">
