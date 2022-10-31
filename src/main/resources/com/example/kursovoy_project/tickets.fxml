@@ -7,40 +7,49 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kursovoy_project.TicketsController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kursovoy_project.TicketsController">
    <children>
-      <AnchorPane prefHeight="115.0" prefWidth="1107.0" style="-fx-background-color: #DEB887;">
+      <AnchorPane prefHeight="115.0" prefWidth="1100.0" style="-fx-background-color: #DEB887;">
          <children>
-            <Label alignment="CENTER" layoutX="405.0" layoutY="10.0" prefHeight="96.0" prefWidth="298.0" text="АЭРКОМ">
+            <Label alignment="CENTER" layoutX="401.0" layoutY="10.0" prefHeight="96.0" prefWidth="298.0" text="АЭРКОМ">
                <font>
-                  <Font size="47.0" />
+                  <Font size="40.0" />
                </font>
             </Label>
+            <Button fx:id="backButton" layoutX="14.0" layoutY="34.0" mnemonicParsing="false" onMouseClicked="#goBack" prefHeight="47.0" prefWidth="113.0" style="-fx-background-color: #FFFAF0;" text="Назад">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
-      <TableView fx:id="table" layoutY="238.0" onMouseClicked="#getSelected" prefHeight="262.0" prefWidth="1107.0">
+      <TableView fx:id="table" layoutY="217.0" onMouseClicked="#getSelected" prefHeight="283.0" prefWidth="1100.0">
         <columns>
-          <TableColumn fx:id="col_id" prefWidth="48.0" text="ID" />
-          <TableColumn fx:id="col_type" prefWidth="112.0" text="Вид услуги" />
-            <TableColumn fx:id="col_nameService" prefWidth="212.0" text="Наименование услуги" />
-            <TableColumn fx:id="col_name" prefWidth="69.0" text="Имя" />
-            <TableColumn fx:id="col_surname" prefWidth="97.0" text="Фамилия" />
-            <TableColumn fx:id="col_number" prefWidth="190.0" text="Номер телефона клиента" />
-            <TableColumn fx:id="col_address" prefWidth="133.0" text="Адрес" />
-            <TableColumn fx:id="col_access" prefWidth="96.0" text="Проверено" />
-            <TableColumn fx:id="col_status" prefWidth="145.0" text="Статус выполнения" />
+          <TableColumn fx:id="col_id" prefWidth="34.0" text="ID" />
+          <TableColumn fx:id="col_type" prefWidth="121.0" text="Вид услуги" />
+            <TableColumn fx:id="col_nameService" prefWidth="269.0" text="Наименование услуги" />
+            <TableColumn fx:id="col_name" prefWidth="67.0" text="Имя" />
+            <TableColumn fx:id="col_surname" prefWidth="76.0" text="Фамилия" />
+            <TableColumn fx:id="col_number" prefWidth="169.0" text="Номер телефона клиента" />
+            <TableColumn fx:id="col_address" prefWidth="139.0" text="Адрес" />
+            <TableColumn fx:id="col_access" prefWidth="97.0" text="Проверено" />
+            <TableColumn fx:id="col_status" prefWidth="130.0" text="Статус выполнения" />
         </columns>
       </TableView>
-      <Button layoutX="610.0" layoutY="147.0" mnemonicParsing="false" onMouseClicked="#toDelete" prefHeight="67.0" prefWidth="218.0" text="Удалить">
+      <Label layoutX="514.0" layoutY="151.0" text="Заявки">
          <font>
-            <Font size="29.0" />
+            <Font name="System Italic" size="23.0" />
+         </font>
+      </Label>
+      <Button layoutX="964.0" layoutY="144.0" mnemonicParsing="false" onMouseClicked="#toDelete" prefHeight="47.0" prefWidth="113.0" style="-fx-background-color: #F0E68C;" text="Удалить">
+         <font>
+            <Font size="14.0" />
          </font>
       </Button>
-      <Button layoutX="853.0" layoutY="147.0" mnemonicParsing="false" onMouseClicked="#toAccess" prefHeight="67.0" prefWidth="218.0" text="Проверено">
+      <Button layoutX="822.0" layoutY="144.0" mnemonicParsing="false" onMouseClicked="#toAccess" prefHeight="47.0" prefWidth="113.0" style="-fx-background-color: #F0E68C;" text="Проверено">
          <font>
-            <Font size="29.0" />
+            <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="backButton" layoutX="24.0" layoutY="24.0" mnemonicParsing="false" onMouseClicked="#goBack" prefHeight="36.0" prefWidth="81.0" text="Назад" />
    </children>
 </AnchorPane>

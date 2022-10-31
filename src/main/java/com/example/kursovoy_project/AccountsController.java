@@ -11,7 +11,6 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
@@ -20,8 +19,6 @@ import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
-import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class AccountsController implements Initializable {
@@ -61,7 +58,7 @@ public class AccountsController implements Initializable {
 
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.execute();
-            JOptionPane.showMessageDialog(null, "Запись обновлена.");
+            JOptionPane.showMessageDialog(null, "Запись обновлена!");
             toDisplay();
         }
         catch (Exception exception){
@@ -133,7 +130,7 @@ public class AccountsController implements Initializable {
         Stage stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader();
         Pane root = fxmlLoader.load(getClass().getResource("administrator-window.fxml").openStream());
-        Scene scene = new Scene(root, 800, 500);
+        Scene scene = new Scene(root, 700, 400);
         stage.setScene(scene);
         stage.setTitle("Admin");
         stage.show();

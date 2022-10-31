@@ -1,7 +1,5 @@
 package com.example.kursovoy_project;
 
-import java.sql.Date;
-
 public class Users {
     int id;
     String login, password, name, surname;

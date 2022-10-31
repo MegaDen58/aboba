@@ -1,11 +1,5 @@
 package com.example.kursovoy_project;
 
-import java.io.IOException;
-import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -14,7 +8,13 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+
 import javax.swing.*;
+import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ResourceBundle;
 
 public class RegistrationController {
 
@@ -51,7 +51,7 @@ public class RegistrationController {
         String login = regLogin.getText();
         String password = regPassword.getText();
         if(name.isEmpty() | login.isEmpty() | login.isEmpty() | password.isEmpty()){
-            errorText.setText("Ошибка регистрации.");
+            errorText.setText("Ошибка регистрации!");
         }
         else{
             boolean isRegistered = false;
@@ -61,7 +61,7 @@ public class RegistrationController {
             while (rs.next()){
                 if(login.equals(rs.getString("Логин"))){
                     isRegistered = true;
-                    JOptionPane.showMessageDialog(null, "Пользователь с данным логином уже существует");
+                    JOptionPane.showMessageDialog(null, "Пользователь с данным логином уже существует!");
                     break;
                 }
             }
@@ -75,7 +75,7 @@ public class RegistrationController {
                 st.setString(4, surname);
 
                 st.execute();
-                JOptionPane.showMessageDialog(null, "Регистрация успешно завершена! Вернитесь на главную страницу и авторизуйтесь");
+                JOptionPane.showMessageDialog(null, "Регистрация успешно завершена! Вернитесь на главную страницу и авторизуйтесь!");
             }
         }
     }

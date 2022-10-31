@@ -8,19 +8,19 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kursovoy_project.ExecutorController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kursovoy_project.ExecutorController">
    <children>
       <AnchorPane prefHeight="115.0" prefWidth="800.0" style="-fx-background-color: #DEB887;">
          <children>
             <Label alignment="CENTER" layoutX="262.0" layoutY="10.0" prefHeight="96.0" prefWidth="298.0" text="АЭРКОМ">
                <font>
-                  <Font size="47.0" />
+                  <Font size="40.0" />
                </font>
             </Label>
-            <Button fx:id="backButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#goBack" prefHeight="36.0" prefWidth="81.0" text="Назад" />
+            <Button fx:id="backButton" layoutX="14.0" layoutY="35.0" mnemonicParsing="false" onMouseClicked="#goBack" prefHeight="47.0" prefWidth="113.0" style="-fx-background-color: #FFFAF0;" text="Назад" />
          </children>
       </AnchorPane>
-      <TableView fx:id="table" layoutY="250.0" onMouseClicked="#getSelected" prefHeight="253.0" prefWidth="800.0">
+      <TableView fx:id="table" layoutY="242.0" onMouseClicked="#getSelected" prefHeight="261.0" prefWidth="800.0">
         <columns>
           <TableColumn fx:id="col_id" prefWidth="64.0" text="ID" />
           <TableColumn fx:id="col_address" prefWidth="111.0" text="Адрес" />
@@ -30,16 +30,17 @@
             <TableColumn fx:id="col_status" prefWidth="123.0" text="Статус выполнения" />
         </columns>
       </TableView>
-      <Label alignment="CENTER" layoutX="246.0" layoutY="124.0" prefHeight="36.0" prefWidth="309.0" text="Статус">
+      <ComboBox fx:id="comboBoxx" layoutX="207.0" layoutY="184.0" prefHeight="34.0" prefWidth="387.0" promptText="Выбрать статус" style="-fx-background-color: #FFE4B5;" />
+      <Button fx:id="updateButton" layoutX="635.0" layoutY="178.0" mnemonicParsing="false" onMouseClicked="#toUpdate" prefHeight="47.0" prefWidth="113.0" style="-fx-background-color: #F0E68C;" text="Обновить" />
+      <Label layoutX="291.0" layoutY="132.0" text="Форма исполнителя">
          <font>
-            <Font size="24.0" />
+            <Font name="System Italic" size="23.0" />
          </font>
       </Label>
-      <ComboBox fx:id="comboBoxx" layoutX="532.0" layoutY="124.0" prefHeight="36.0" prefWidth="237.0" />
-      <Button fx:id="updateButton" layoutX="301.0" layoutY="180.0" mnemonicParsing="false" onMouseClicked="#toUpdate" prefHeight="53.0" prefWidth="224.0" text="Обновить">
+      <Label layoutX="83.0" layoutY="192.0" text="Статус заявки">
          <font>
-            <Font size="23.0" />
+            <Font name="System Italic" size="14.0" />
          </font>
-      </Button>
+      </Label>
    </children>
 </AnchorPane>

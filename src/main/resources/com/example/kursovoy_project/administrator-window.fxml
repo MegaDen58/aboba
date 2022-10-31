@@ -5,33 +5,37 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kursovoy_project.AdministratorController">
+<AnchorPane prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kursovoy_project.AdministratorController">
    <children>
-      <AnchorPane prefHeight="115.0" prefWidth="800.0" style="-fx-background-color: #DEB887;">
+      <AnchorPane prefHeight="115.0" prefWidth="700.0" style="-fx-background-color: #DEB887;">
          <children>
-            <Label alignment="CENTER" layoutX="262.0" layoutY="10.0" prefHeight="96.0" prefWidth="298.0" text="АЭРКОМ">
+            <Label alignment="CENTER" layoutX="201.0" layoutY="12.0" prefHeight="96.0" prefWidth="298.0" text="АЭРКОМ">
                <font>
-                  <Font size="47.0" />
+                  <Font size="40.0" />
                </font>
             </Label>
+            <Button fx:id="backButton" layoutX="14.0" layoutY="36.0" mnemonicParsing="false" onMouseClicked="#goBack" prefHeight="47.0" prefWidth="113.0" style="-fx-background-color: #FFFAF0;" text="Назад" />
          </children>
       </AnchorPane>
-      <Button fx:id="accounts" layoutX="297.0" layoutY="182.0" mnemonicParsing="false" onMouseClicked="#toAccounts" prefHeight="58.0" prefWidth="206.0" text="Аккаунты">
+      <Button fx:id="accounts" layoutX="258.0" layoutY="183.0" mnemonicParsing="false" onMouseClicked="#toAccounts" prefHeight="49.0" prefWidth="185.0" style="-fx-background-color: #F0E68C;" text="Аккаунты">
          <font>
-            <Font size="24.0" />
+            <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="services" layoutX="297.0" layoutY="260.0" mnemonicParsing="false" onMouseClicked="#toServices" prefHeight="58.0" prefWidth="206.0" text="Услуги">
+      <Button fx:id="services" layoutX="258.0" layoutY="251.0" mnemonicParsing="false" onMouseClicked="#toServices" prefHeight="49.0" prefWidth="185.0" style="-fx-background-color: #F0E68C;" text="Услуги">
          <font>
-            <Font size="24.0" />
+            <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="tickets" layoutX="297.0" layoutY="339.0" mnemonicParsing="false" onMouseClicked="#toTickets" prefHeight="58.0" prefWidth="206.0" text="Заявки">
+      <Button fx:id="tickets" layoutX="258.0" layoutY="321.0" mnemonicParsing="false" onMouseClicked="#toTickets" prefHeight="49.0" prefWidth="185.0" style="-fx-background-color: #F0E68C;" text="Заявки">
          <font>
-            <Font size="24.0" />
+            <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="backButton" layoutX="24.0" layoutY="24.0" mnemonicParsing="false" onMouseClicked="#goBack" prefHeight="36.0" prefWidth="81.0" text="Назад" />
+      <Label layoutX="304.0" layoutY="131.0" text="Таблицы">
+         <font>
+            <Font name="System Italic" size="23.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

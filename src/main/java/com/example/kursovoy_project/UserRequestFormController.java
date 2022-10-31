@@ -5,7 +5,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
 
 import javax.swing.*;
 import java.net.URL;
@@ -77,7 +76,7 @@ public class UserRequestFormController implements Initializable {
 
         preparedStatement.execute();
 
-        JOptionPane.showMessageDialog(null, "Заявка подана");
+        JOptionPane.showMessageDialog(null, "Заявка подана!");
     }
 
     public String nameOfService(String text){

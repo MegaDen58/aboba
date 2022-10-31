@@ -11,7 +11,6 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
@@ -22,7 +21,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 import java.util.ResourceBundle;
 
 public class ExecutorController implements Initializable {
@@ -102,7 +100,7 @@ public class ExecutorController implements Initializable {
         statement.execute();
         toDisplay();
 
-        JOptionPane.showMessageDialog(null, "Статус обновлён.");
+        JOptionPane.showMessageDialog(null, "Статус обновлён!");
     }
 
     public void goBack() throws Exception{

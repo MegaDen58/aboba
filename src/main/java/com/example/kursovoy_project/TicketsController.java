@@ -10,10 +10,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-
 
 import javax.swing.*;
 import java.net.URL;
@@ -93,7 +91,7 @@ public class TicketsController implements Initializable {
         String sql = String.format("update clientservices set Проверено='Да' where id='%s'", id);
         PreparedStatement statement = connection.prepareStatement(sql);
         statement.execute();
-        JOptionPane.showMessageDialog(null, "Запись Обновлена.");
+        JOptionPane.showMessageDialog(null, "Запись Обновлена!");
         toDisplay();
     }
 
@@ -102,7 +100,7 @@ public class TicketsController implements Initializable {
         String sql = String.format("DELETE from clientservices WHERE id='%s'", id);
         PreparedStatement statement = connection.prepareStatement(sql);
         statement.execute();
-        JOptionPane.showMessageDialog(null, "Запись удалена.");
+        JOptionPane.showMessageDialog(null, "Запись удалена!");
         toDisplay();
     }
 
@@ -113,7 +111,7 @@ public class TicketsController implements Initializable {
         Stage stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader();
         Pane root = fxmlLoader.load(getClass().getResource("administrator-window.fxml").openStream());
-        Scene scene = new Scene(root, 800, 500);
+        Scene scene = new Scene(root, 700, 400);
         stage.setScene(scene);
         stage.setTitle("Admin");
         stage.show();
