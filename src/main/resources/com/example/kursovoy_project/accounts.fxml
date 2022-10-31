@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kursovoy_project.AccountsController">
+   <children>
+      <AnchorPane prefHeight="115.0" prefWidth="800.0" style="-fx-background-color: #DEB887;">
+         <children>
+            <Label alignment="CENTER" layoutX="262.0" layoutY="10.0" prefHeight="96.0" prefWidth="298.0" text="АЭРКОМ">
+               <font>
+                  <Font size="47.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <TableView fx:id="table" layoutX="131.0" layoutY="240.0" onMouseClicked="#getSelected" prefHeight="260.0" prefWidth="538.0">
+        <columns>
+          <TableColumn fx:id="col_id" prefWidth="66.0" text="ID" />
+          <TableColumn fx:id="col_login" prefWidth="110.0" text="Логин" />
+            <TableColumn fx:id="col_password" prefWidth="90.0" text="Пароль" />
+            <TableColumn fx:id="col_name" prefWidth="114.0" text="Имя" />
+            <TableColumn fx:id="col_surname" prefWidth="157.0" text="Фамилия" />
+        </columns>
+      </TableView>
+      <TextField fx:id="login" layoutX="68.0" layoutY="132.0" prefHeight="31.0" prefWidth="158.0" promptText="Логин" />
+      <TextField fx:id="password" layoutX="247.0" layoutY="132.0" prefHeight="31.0" prefWidth="158.0" promptText="Пароль" />
+      <TextField fx:id="name" layoutX="425.0" layoutY="132.0" prefHeight="31.0" prefWidth="158.0" promptText="Имя" />
+      <TextField fx:id="surname" layoutX="607.0" layoutY="132.0" prefHeight="31.0" prefWidth="158.0" promptText="Фамилия" />
+      <Button layoutX="145.0" layoutY="179.0" mnemonicParsing="false" onMouseClicked="#toUpdate" prefHeight="52.0" prefWidth="175.0" text="Обновить">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Button>
+      <Button layoutX="481.0" layoutY="179.0" mnemonicParsing="false" onMouseClicked="#toDelete" prefHeight="52.0" prefWidth="175.0" text="Удалить">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Button>
+      <TextField fx:id="id" layoutX="7.0" layoutY="132.0" prefHeight="31.0" prefWidth="54.0" promptText="ID" />
+      <Button fx:id="backButton" layoutX="24.0" layoutY="24.0" mnemonicParsing="false" onMouseClicked="#goBack" prefHeight="36.0" prefWidth="81.0" text="Назад" />
+   </children>
+</AnchorPane>

@@ -1,31 +1,18 @@
 package com.example.kursovoy_project;
+import com.example.kursovoy_project.RoleController;
 
-import java.net.URL;
-import java.util.ResourceBundle;
+import java.sql.Connection;
+import java.sql.ResultSet;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 public class AuthorizationController {
 
-    @FXML
-    private ResourceBundle resources;
 
-    @FXML
-    private URL location;
-
-    @FXML
-    private Button authButton;
-
-    @FXML
-    private TextField authLogin;
-
-    @FXML
-    private TextField authPassword;
-
-    @FXML
-    void initialize() {
-
-    }
 
 }

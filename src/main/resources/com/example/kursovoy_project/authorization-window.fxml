@@ -7,8 +7,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #DEB887;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kursovoy_project.AuthorizationController">
+<AnchorPane prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #DEB887;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kursovoy_project.RoleController">
    <children>
+      <Button fx:id="backButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#goBack" prefHeight="34.0" prefWidth="80.0" text="Назад" />
       <AnchorPane layoutY="88.0" prefHeight="312.0" prefWidth="700.0" style="-fx-background-color: #ffffff;">
          <children>
             <Label layoutX="280.0" layoutY="24.0" text="Авторизация">
@@ -17,12 +18,17 @@
                </font>
             </Label>
             <TextField fx:id="authLogin" layoutX="237.0" layoutY="87.0" prefHeight="34.0" prefWidth="230.0" promptText="Логин" />
-            <Button fx:id="authButton" layoutX="275.0" layoutY="226.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="154.0" style="-fx-background-color: #F0E68C;" text="Войти">
+            <Button fx:id="authButton" layoutX="275.0" layoutY="233.0" mnemonicParsing="false" onMouseClicked="#toLogin" prefHeight="47.0" prefWidth="154.0" style="-fx-background-color: #F0E68C;" text="Войти">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
-            <PasswordField layoutX="239.0" layoutY="156.0" prefHeight="34.0" prefWidth="230.0" promptText="Пароль" />
+            <PasswordField fx:id="authPassword" layoutX="239.0" layoutY="156.0" prefHeight="34.0" prefWidth="230.0" promptText="Пароль" />
+            <Label fx:id="errorText" alignment="CENTER" layoutX="229.0" layoutY="197.0" prefHeight="34.0" prefWidth="249.0" textFill="RED">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
       <Label layoutX="269.0" layoutY="14.0" text="АЭРКОМ">

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kursovoy_project.ServicesController">
+   <children>
+      <AnchorPane prefHeight="115.0" prefWidth="1000.0" style="-fx-background-color: #DEB887;">
+         <children>
+            <Label alignment="CENTER" layoutX="351.0" layoutY="10.0" prefHeight="96.0" prefWidth="298.0" text="АЭРКОМ">
+               <font>
+                  <Font size="47.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <TableView fx:id="table" layoutY="320.0" onMouseClicked="#getSelected" prefHeight="280.0" prefWidth="1000.0">
+        <columns>
+          <TableColumn fx:id="col_id" prefWidth="62.0" text="ID" />
+          <TableColumn fx:id="col_type" prefWidth="209.0" text="Вид услуги" />
+            <TableColumn fx:id="col_name" prefWidth="291.0" text="Наименование услуги" />
+            <TableColumn fx:id="col_workTime" minWidth="0.0" prefWidth="140.0" text="Срок службы" />
+            <TableColumn fx:id="col_time" prefWidth="162.0" text="Срок выполнения" />
+            <TableColumn fx:id="col_price" prefWidth="135.0" text="Цена" />
+        </columns>
+      </TableView>
+      <TextField fx:id="id" layoutX="159.0" layoutY="125.0" prefHeight="37.0" prefWidth="197.0" promptText="ID" />
+      <TextField fx:id="type" layoutX="159.0" layoutY="184.0" prefHeight="37.0" prefWidth="197.0" promptText="Вид услуги" />
+      <TextField fx:id="name" layoutX="401.0" layoutY="125.0" prefHeight="37.0" prefWidth="197.0" promptText="Наименование услуги" />
+      <TextField fx:id="workTime" layoutX="401.0" layoutY="184.0" prefHeight="37.0" prefWidth="197.0" promptText="Срок службы" />
+      <TextField fx:id="time" layoutX="644.0" layoutY="125.0" prefHeight="37.0" prefWidth="197.0" promptText="Срок выполнения" />
+      <TextField fx:id="price" layoutX="644.0" layoutY="184.0" prefHeight="37.0" prefWidth="197.0" promptText="Цена" />
+      <Button layoutX="159.0" layoutY="255.0" mnemonicParsing="false" onMouseClicked="#toDelete" prefHeight="45.0" prefWidth="197.0" text="Удалить">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button layoutX="401.0" layoutY="255.0" mnemonicParsing="false" onMouseClicked="#toAdd" prefHeight="45.0" prefWidth="197.0" text="Добавить">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button layoutX="650.0" layoutY="255.0" mnemonicParsing="false" onMouseClicked="#toUpdate" prefHeight="45.0" prefWidth="197.0" text="Обновить">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="backButton" layoutX="24.0" layoutY="24.0" mnemonicParsing="false" onMouseClicked="#goBack" prefHeight="36.0" prefWidth="81.0" text="Назад" />
+   </children>
+</AnchorPane>

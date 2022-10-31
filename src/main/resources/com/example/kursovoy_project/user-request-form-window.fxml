@@ -11,19 +11,19 @@
    <children>
       <AnchorPane prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #DEB887;">
          <children>
-            <AnchorPane layoutY="88.0" prefHeight="312.0" prefWidth="700.0" style="-fx-background-color: #ffffff;">
+            <AnchorPane layoutY="88.0" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #ffffff;">
                <children>
-                  <TextField fx:id="requestFormName" layoutX="29.0" layoutY="71.0" prefHeight="36.0" prefWidth="196.0" promptText="Имя" />
-                  <TextField fx:id="requestFormSurname" layoutX="29.0" layoutY="130.0" prefHeight="36.0" prefWidth="196.0" promptText="Фамилия" />
-                  <TextField fx:id="requestFormNumber" layoutX="29.0" layoutY="192.0" prefHeight="36.0" prefWidth="196.0" promptText="Номер телефона" />
-                  <TextField fx:id="requestFormAddress" layoutX="29.0" layoutY="250.0" prefHeight="36.0" prefWidth="196.0" promptText="Адрес " />
-                  <Label layoutX="212.0" layoutY="21.0" text="Форма заполнения заявки">
+                  <TextField fx:id="requestFormName" layoutX="29.0" layoutY="76.0" prefHeight="47.0" prefWidth="220.0" promptText="Имя" />
+                  <TextField fx:id="requestFormSurname" layoutX="29.0" layoutY="154.0" prefHeight="47.0" prefWidth="220.0" promptText="Фамилия" />
+                  <TextField fx:id="requestFormNumber" layoutX="29.0" layoutY="226.0" prefHeight="47.0" prefWidth="220.0" promptText="Номер телефона" />
+                  <TextField fx:id="requestFormAddress" layoutX="29.0" layoutY="298.0" prefHeight="58.0" prefWidth="305.0" promptText="Адрес " />
+                  <Label layoutX="262.0" layoutY="14.0" text="Форма заполнения заявки">
                      <font>
                         <Font name="System Italic" size="23.0" />
                      </font>
                   </Label>
-                  <ComboBox fx:id="choiceOfServicesList" layoutX="254.0" layoutY="71.0" prefHeight="36.0" prefWidth="424.0" promptText="Выберите услугу" style="-fx-background-color: #FFE4B5;" />
-                  <Button fx:id="regButton" layoutX="524.0" layoutY="245.0" mnemonicParsing="false" onAction="#Registration" prefHeight="47.0" prefWidth="154.0" style="-fx-background-color: #F0E68C;" text="Отправить заявку">
+                  <ComboBox fx:id="choiceOfServicesList" layoutX="364.0" layoutY="76.0" prefHeight="47.0" prefWidth="352.0" promptText="Выберите услугу" style="-fx-background-color: #FFE4B5;" />
+                  <Button fx:id="regButton" layoutX="538.0" layoutY="298.0" mnemonicParsing="false" onMouseClicked="#toRequest" prefHeight="58.0" prefWidth="178.0" style="-fx-background-color: #F0E68C;" text="Отправить заявку">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -35,6 +35,7 @@
                   <Font size="40.0" />
                </font>
             </Label>
+            <Button fx:id="outButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#goOut" prefHeight="34.0" prefWidth="80.0" text="Выйти" />
          </children>
       </AnchorPane>
    </children>
