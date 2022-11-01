@@ -102,7 +102,7 @@ public class RoleController {
     public void toLogin() throws Exception{
 
         if(status.equals("admin") && authLogin.getText().equals("admin")){
-            if(checkPassword(authLogin.getText(), "administrator-window.fxml")){
+            if(checkPassword(authLogin.getText(), "administrator-window.fxml", 800, 500)){
                 Stage stageToCloseClient = (Stage) authButton.getScene().getWindow();
                 stageToCloseClient.close();
             }
@@ -111,7 +111,7 @@ public class RoleController {
 
         else if(status.equals("executor") && authLogin.getText().equals("executor")){
 
-            if(checkPassword(authLogin.getText(), "executor.fxml")){
+            if(checkPassword(authLogin.getText(), "executor.fxml", 800, 500)){
                 Stage stageToCloseClient = (Stage) authButton.getScene().getWindow();
                 stageToCloseClient.close();
             }
@@ -120,7 +120,7 @@ public class RoleController {
 
         else if(status.equals("client")){
 
-            if(checkPassword(authLogin.getText(), "user-request-form-window.fxml")){
+            if(checkPassword(authLogin.getText(), "user-request-form-window.fxml", 700, 400)){
                 Stage stageToCloseClient = (Stage) authButton.getScene().getWindow();
                 stageToCloseClient.close();
             }
@@ -131,23 +131,28 @@ public class RoleController {
         }
 
     }
-    public boolean checkPassword(String login, String window) throws Exception{
+    public boolean checkPassword(String login, String window, int v, int v1) throws Exception{
 
-        String realPassword = "";
-        connection = Connector.ConnectDb();
-        String sql = String.format("select Пароль from accounts where Логин='%s'", login);
-        resultSet = connection.createStatement().executeQuery(sql);
-        while (resultSet.next()){
-            realPassword = resultSet.getString("Пароль");
+        if(login.isEmpty()){
+            return false;
         }
-        if(realPassword.equals(authPassword.getText())){
-            Pane root = fxmlLoader.load(getClass().getResource(window).openStream());
-            Scene scene = new Scene(root, 800, 500);
-            stage.setScene(scene);
-            stage.setTitle("Authorization");
-            stage.show();
-            stage.setResizable(false);
-            return true;
+        else{
+            String realPassword = "";
+            connection = Connector.ConnectDb();
+            String sql = String.format("select Пароль from accounts where Логин='%s'", login);
+            resultSet = connection.createStatement().executeQuery(sql);
+            while (resultSet.next()){
+                realPassword = resultSet.getString("Пароль");
+            }
+            if(realPassword.equals(authPassword.getText())){
+                Pane root = fxmlLoader.load(getClass().getResource(window).openStream());
+                Scene scene = new Scene(root, v, v1);
+                stage.setScene(scene);
+                stage.setTitle("Authorization");
+                stage.show();
+                stage.setResizable(false);
+                return true;
+            }
         }
         return false;
     }

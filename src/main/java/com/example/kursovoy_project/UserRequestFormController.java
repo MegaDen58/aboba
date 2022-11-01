@@ -51,32 +51,50 @@ public class UserRequestFormController implements Initializable {
         String surname = requestFormSurname.getText();
         String number = requestFormNumber.getText();
         String address = requestFormAddress.getText();
-        String nameService = choiceOfServicesList.getSelectionModel().getSelectedItem().toString();
-        String typeOfService = "";
-        String find = nameOfService(nameService);
 
-        connection = Connector.ConnectDb();
-        String sql = String.format("select Вид_услуги from group.allservices where Наименование_услуги='%s'", find);
-        ResultSet resultSet = connection.createStatement().executeQuery(sql);
-        while (resultSet.next()){
-            typeOfService = resultSet.getString("Вид_услуги");
+        if(name.isEmpty() | surname.isEmpty() | number.isEmpty() | address.isEmpty()){
+            try{
+                String nameService = choiceOfServicesList.getSelectionModel().getSelectedItem().toString();
+                JOptionPane.showMessageDialog(null, "Ошибка. Все поля должны быть заполнены.");
+            }
+            catch (Exception exception){
+                JOptionPane.showMessageDialog(null, "Ошибка. Все поля должны быть заполнены.");
+            }
         }
+        else{
+            try{
+                String nameService = choiceOfServicesList.getSelectionModel().getSelectedItem().toString();
 
-        PreparedStatement preparedStatement = connection.prepareStatement("insert into clientservices " +
-                "(Имя, Фамилия, Вид_услуги, Наименование_услуги, Номер_телефона_клиента, Статус_выполнения, Адрес) " +
-                "values (?, ?, ?, ?, ?, ?, ?)");
+                String typeOfService = "";
+                String find = nameOfService(nameService);
 
-        preparedStatement.setString(1, name);
-        preparedStatement.setString(2, surname);
-        preparedStatement.setString(3, typeOfService);
-        preparedStatement.setString(4, find);
-        preparedStatement.setString(5, number);
-        preparedStatement.setString(6, "Принято");
-        preparedStatement.setString(7, address);
+                connection = Connector.ConnectDb();
+                String sql = String.format("select Вид_услуги from group.allservices where Наименование_услуги='%s'", find);
+                ResultSet resultSet = connection.createStatement().executeQuery(sql);
+                while (resultSet.next()){
+                    typeOfService = resultSet.getString("Вид_услуги");
+                }
 
-        preparedStatement.execute();
+                PreparedStatement preparedStatement = connection.prepareStatement("insert into clientservices " +
+                        "(Имя, Фамилия, Вид_услуги, Наименование_услуги, Номер_телефона_клиента, Статус_выполнения, Адрес) " +
+                        "values (?, ?, ?, ?, ?, ?, ?)");
 
-        JOptionPane.showMessageDialog(null, "Заявка подана!");
+                preparedStatement.setString(1, name);
+                preparedStatement.setString(2, surname);
+                preparedStatement.setString(3, typeOfService);
+                preparedStatement.setString(4, find);
+                preparedStatement.setString(5, number);
+                preparedStatement.setString(6, "Принято");
+                preparedStatement.setString(7, address);
+
+                preparedStatement.execute();
+
+                JOptionPane.showMessageDialog(null, "Заявка подана!");
+            }
+            catch (Exception exception){
+                JOptionPane.showMessageDialog(null, "Ошибка. Все поля должны быть заполнены.");
+            }
+        }
     }
 
     public String nameOfService(String text){

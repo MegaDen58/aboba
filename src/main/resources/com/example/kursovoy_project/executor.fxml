@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kursovoy_project.ExecutorController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kursovoy_project.ExecutorController">
    <children>
       <AnchorPane prefHeight="115.0" prefWidth="800.0" style="-fx-background-color: #DEB887;">
          <children>
@@ -26,11 +26,10 @@
       <TableView fx:id="table" layoutY="242.0" onMouseClicked="#getSelected" prefHeight="261.0" prefWidth="800.0">
         <columns>
           <TableColumn fx:id="col_id" prefWidth="64.0" text="ID" />
-          <TableColumn fx:id="col_address" prefWidth="111.0" text="Адрес" />
-            <TableColumn fx:id="col_type" prefWidth="164.0" text="Вид услуги" />
-            <TableColumn fx:id="col_name" prefWidth="195.0" text="Наименование услуги" />
-            <TableColumn fx:id="col_number" minWidth="7.0" prefWidth="142.0" text="Номер клиента" />
-            <TableColumn fx:id="col_status" prefWidth="123.0" text="Статус выполнения" />
+          <TableColumn fx:id="col_type" prefWidth="144.0" text="Вид услуги" />
+            <TableColumn fx:id="col_name" prefWidth="240.0" text="Наименование услуги" />
+            <TableColumn fx:id="col_address" prefWidth="199.0" text="Адрес" />
+            <TableColumn fx:id="col_status" prefWidth="152.0" text="Статус выполнения" />
         </columns>
       </TableView>
       <ComboBox fx:id="comboBoxx" layoutX="207.0" layoutY="184.0" prefHeight="34.0" prefWidth="387.0" promptText="Выбрать статус" style="-fx-background-color: #FFE4B5;" />

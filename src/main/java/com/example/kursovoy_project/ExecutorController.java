@@ -31,7 +31,6 @@ public class ExecutorController implements Initializable {
     @FXML TableColumn<ExecutorTicket, String> col_address;
     @FXML TableColumn<ExecutorTicket, String> col_type;
     @FXML TableColumn<ExecutorTicket, String> col_name;
-    @FXML TableColumn<ExecutorTicket, String> col_number;
     @FXML TableColumn<ExecutorTicket, String> col_status;
     @FXML Button backButton;
     Connection connection;
@@ -63,14 +62,13 @@ public class ExecutorController implements Initializable {
         while (rs.next()) {
             list.add(new ExecutorTicket(Integer.parseInt(rs.getString("id")), rs.getString("Адрес"),
                     rs.getString("Вид_услуги"), rs.getString("Наименование_услуги"),
-                    rs.getString("Номер_телефона_клиента"), rs.getString("Статус_выполнения")));
+                    rs.getString("Статус_выполнения")));
         }
 
         col_id.setCellValueFactory(new PropertyValueFactory<>("id"));
         col_address.setCellValueFactory(new PropertyValueFactory<>("address"));
         col_type.setCellValueFactory(new PropertyValueFactory<>("type"));
         col_name.setCellValueFactory(new PropertyValueFactory<>("name"));
-        col_number.setCellValueFactory(new PropertyValueFactory<>("number"));
         col_status.setCellValueFactory(new PropertyValueFactory<>("status"));
 
         table.setItems(list);
