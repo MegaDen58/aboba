@@ -17,7 +17,10 @@
                   <Font size="40.0" />
                </font>
             </Label>
-            <Button fx:id="backButton" layoutX="14.0" layoutY="35.0" mnemonicParsing="false" onMouseClicked="#goBack" prefHeight="47.0" prefWidth="113.0" style="-fx-background-color: #FFFAF0;" text="Назад" />
+            <Button fx:id="backButton" layoutX="14.0" layoutY="35.0" mnemonicParsing="false" onMouseClicked="#goBack" prefHeight="47.0" prefWidth="113.0" style="-fx-background-color: #FFFAF0;" text="Назад">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></Button>
          </children>
       </AnchorPane>
       <TableView fx:id="table" layoutY="242.0" onMouseClicked="#getSelected" prefHeight="261.0" prefWidth="800.0">
