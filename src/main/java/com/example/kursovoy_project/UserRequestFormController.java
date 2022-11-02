@@ -55,10 +55,10 @@ public class UserRequestFormController implements Initializable {
         if(name.isEmpty() | surname.isEmpty() | number.isEmpty() | address.isEmpty()){
             try{
                 String nameService = choiceOfServicesList.getSelectionModel().getSelectedItem().toString();
-                JOptionPane.showMessageDialog(null, "Ошибка. Все поля должны быть заполнены.");
+                JOptionPane.showMessageDialog(null, "Ошибка! Все поля должны быть заполнены!");
             }
             catch (Exception exception){
-                JOptionPane.showMessageDialog(null, "Ошибка. Все поля должны быть заполнены.");
+                JOptionPane.showMessageDialog(null, "Ошибка! Все поля должны быть заполнены!");
             }
         }
         else{
@@ -69,7 +69,7 @@ public class UserRequestFormController implements Initializable {
                 String find = nameOfService(nameService);
 
                 connection = Connector.ConnectDb();
-                String sql = String.format("select Вид_услуги from group.allservices where Наименование_услуги='%s'", find);
+                String sql = String.format("select Вид_услуги from allservices.allservices where Наименование_услуги='%s'", find);
                 ResultSet resultSet = connection.createStatement().executeQuery(sql);
                 while (resultSet.next()){
                     typeOfService = resultSet.getString("Вид_услуги");
@@ -92,7 +92,7 @@ public class UserRequestFormController implements Initializable {
                 JOptionPane.showMessageDialog(null, "Заявка подана!");
             }
             catch (Exception exception){
-                JOptionPane.showMessageDialog(null, "Ошибка. Все поля должны быть заполнены.");
+                JOptionPane.showMessageDialog(null, "Ошибка! Все поля должны быть заполнены!");
             }
         }
     }

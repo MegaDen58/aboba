@@ -26,15 +26,15 @@ import java.util.ResourceBundle;
 public class ExecutorController implements Initializable {
 
     @FXML ComboBox<String> comboBoxx;
-    @FXML TableView<ExecutorTicket> table;
-    @FXML TableColumn<ExecutorTicket, Integer> col_id;
-    @FXML TableColumn<ExecutorTicket, String> col_address;
-    @FXML TableColumn<ExecutorTicket, String> col_type;
-    @FXML TableColumn<ExecutorTicket, String> col_name;
-    @FXML TableColumn<ExecutorTicket, String> col_status;
+    @FXML TableView<ExecutorRequests> table;
+    @FXML TableColumn<ExecutorRequests, Integer> col_id;
+    @FXML TableColumn<ExecutorRequests, String> col_address;
+    @FXML TableColumn<ExecutorRequests, String> col_type;
+    @FXML TableColumn<ExecutorRequests, String> col_name;
+    @FXML TableColumn<ExecutorRequests, String> col_status;
     @FXML Button backButton;
     Connection connection;
-    ObservableList<ExecutorTicket> list = FXCollections.observableArrayList();
+    ObservableList<ExecutorRequests> list = FXCollections.observableArrayList();
     public static int id;
 
 
@@ -60,7 +60,7 @@ public class ExecutorController implements Initializable {
         ResultSet rs = connection.createStatement().executeQuery("select * from clientservices where Проверено='Да'");
 
         while (rs.next()) {
-            list.add(new ExecutorTicket(Integer.parseInt(rs.getString("id")), rs.getString("Адрес"),
+            list.add(new ExecutorRequests(Integer.parseInt(rs.getString("id")), rs.getString("Адрес"),
                     rs.getString("Вид_услуги"), rs.getString("Наименование_услуги"),
                     rs.getString("Статус_выполнения")));
         }
@@ -110,7 +110,7 @@ public class ExecutorController implements Initializable {
         Pane root = fxmlLoader.load(getClass().getResource("role.fxml").openStream());
         Scene scene = new Scene(root, 700, 400);
         stage.setScene(scene);
-        stage.setTitle("Authorization");
+        stage.setTitle("Role");
         stage.show();
         stage.setResizable(false);
     }

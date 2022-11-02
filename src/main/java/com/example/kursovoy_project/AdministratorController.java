@@ -22,7 +22,7 @@ public class AdministratorController {
         Stage stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("services.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1000, 600);
-        stage.setTitle("Accounts");
+        stage.setTitle("Services");
         stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
@@ -47,9 +47,9 @@ public class AdministratorController {
         stageToCloseClient.close();
 
         Stage stage = new Stage();
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("tickets.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("requests.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1100, 500);
-        stage.setTitle("Accounts");
+        stage.setTitle("Requests");
         stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
@@ -64,7 +64,7 @@ public class AdministratorController {
         Pane root = fxmlLoader.load(getClass().getResource("role.fxml").openStream());
         Scene scene = new Scene(root, 700, 400);
         stage.setScene(scene);
-        stage.setTitle("Authorization");
+        stage.setTitle("Role");
         stage.show();
         stage.setResizable(false);
     }

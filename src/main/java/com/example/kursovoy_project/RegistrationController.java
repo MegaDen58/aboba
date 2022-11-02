@@ -51,13 +51,13 @@ public class RegistrationController {
         String login = regLogin.getText();
         String password = regPassword.getText();
         if(name.isEmpty() | login.isEmpty() | login.isEmpty() | password.isEmpty()){
-            errorText.setText("Ошибка регистрации!");
+            JOptionPane.showMessageDialog(null, "Ошибка авторизации! Все поля должны быть заполнены!");
         }
         else{
             boolean isRegistered = false;
 
             connection = Connector.ConnectDb();
-            ResultSet rs = connection.createStatement().executeQuery("select Логин from `group`.accounts");
+            ResultSet rs = connection.createStatement().executeQuery("select Логин from `allservices`.accounts");
             while (rs.next()){
                 if(login.equals(rs.getString("Логин"))){
                     isRegistered = true;

@@ -16,7 +16,7 @@
                   <TextField fx:id="requestFormName" layoutX="29.0" layoutY="76.0" prefHeight="40.0" prefWidth="305.0" promptText="Имя" />
                   <TextField fx:id="requestFormSurname" layoutX="29.0" layoutY="136.0" prefHeight="40.0" prefWidth="305.0" promptText="Фамилия" />
                   <TextField fx:id="requestFormNumber" layoutX="29.0" layoutY="198.0" prefHeight="40.0" prefWidth="305.0" promptText="Номер телефона" />
-                  <TextField fx:id="requestFormAddress" layoutX="29.0" layoutY="256.0" prefHeight="34.0" prefWidth="305.0" promptText="Адрес " />
+                  <TextField fx:id="requestFormAddress" layoutX="29.0" layoutY="256.0" prefHeight="40.0" prefWidth="305.0" promptText="Адрес " />
                   <Label layoutX="212.0" layoutY="20.0" text="Форма заполнения заявки">
                      <font>
                         <Font name="System Italic" size="23.0" />

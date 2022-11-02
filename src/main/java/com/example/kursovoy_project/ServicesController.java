@@ -154,7 +154,7 @@ public class ServicesController implements Initializable {
         Pane root = fxmlLoader.load(getClass().getResource("administrator-window.fxml").openStream());
         Scene scene = new Scene(root, 700, 400);
         stage.setScene(scene);
-        stage.setTitle("Admin");
+        stage.setTitle("Table");
         stage.show();
         stage.setResizable(false);
     }

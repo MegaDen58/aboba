@@ -1,10 +1,10 @@
 package com.example.kursovoy_project;
 
-public class ExecutorTicket {
+public class ExecutorRequests {
     int id;
     String address, type, name, status;
 
-    public ExecutorTicket(int id, String address, String type, String name, String status){
+    public ExecutorRequests(int id, String address, String type, String name, String status){
         this.id = id;
         this.address = address;
         this.type = type;

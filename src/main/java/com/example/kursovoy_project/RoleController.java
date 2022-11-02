@@ -10,6 +10,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
+import javax.swing.*;
 import java.sql.Connection;
 import java.sql.ResultSet;
 
@@ -102,32 +103,33 @@ public class RoleController {
     public void toLogin() throws Exception{
 
         if(status.equals("admin") && authLogin.getText().equals("admin")){
-            if(checkPassword(authLogin.getText(), "administrator-window.fxml", 800, 500)){
+            if(checkPassword(authLogin.getText(), "administrator-window.fxml", 700, 400)){
+                stage.setTitle("Table");
                 Stage stageToCloseClient = (Stage) authButton.getScene().getWindow();
                 stageToCloseClient.close();
             }
-            else errorText.setText("Ошибка авторизации!");
+            else JOptionPane.showMessageDialog(null, "Ошибка авторизации!");
         }
 
         else if(status.equals("executor") && authLogin.getText().equals("executor")){
-
             if(checkPassword(authLogin.getText(), "executor.fxml", 800, 500)){
+                stage.setTitle("Executor");
                 Stage stageToCloseClient = (Stage) authButton.getScene().getWindow();
                 stageToCloseClient.close();
             }
-            else errorText.setText("Ошибка авторизации!");
+            else JOptionPane.showMessageDialog(null, "Ошибка авторизации!");
         }
 
         else if(status.equals("client")){
-
             if(checkPassword(authLogin.getText(), "user-request-form-window.fxml", 700, 400)){
+                stage.setTitle("Requests Form");
                 Stage stageToCloseClient = (Stage) authButton.getScene().getWindow();
                 stageToCloseClient.close();
             }
-            else errorText.setText("Ошибка авторизации!");
+            else JOptionPane.showMessageDialog(null, "Ошибка авторизации!");
         }
         else{
-            errorText.setText("Ошибка авторизации!");
+            JOptionPane.showMessageDialog(null, "Ошибка авторизации!");
         }
 
     }

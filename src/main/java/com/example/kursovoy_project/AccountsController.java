@@ -37,7 +37,6 @@ public class AccountsController implements Initializable {
     @FXML
     Button backButton;
 
-
     ObservableList<Users> list = FXCollections.observableArrayList();
     Connection connection;
     public void toUpdate() throws Exception{
@@ -72,6 +71,7 @@ public class AccountsController implements Initializable {
         String sql = String.format("DELETE from accounts WHERE id='%s'", id1);
         PreparedStatement statement = connection.prepareStatement(sql);
         statement.execute();
+        JOptionPane.showMessageDialog(null, "Запись удалена!");
         toDisplay();
     }
 
@@ -132,7 +132,7 @@ public class AccountsController implements Initializable {
         Pane root = fxmlLoader.load(getClass().getResource("administrator-window.fxml").openStream());
         Scene scene = new Scene(root, 700, 400);
         stage.setScene(scene);
-        stage.setTitle("Admin");
+        stage.setTitle("Tables");
         stage.show();
         stage.setResizable(false);
     }

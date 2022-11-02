@@ -20,22 +20,22 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ResourceBundle;
 
-public class TicketsController implements Initializable {
+public class RequestsController implements Initializable {
 
     Connection connection;
-    ObservableList<Ticket> list = FXCollections.observableArrayList();
+    ObservableList<Requests> list = FXCollections.observableArrayList();
     public static int id;
 
-    @FXML TableView<Ticket> table;
-    @FXML TableColumn<Ticket, Integer> col_id;
-    @FXML TableColumn<Ticket, String> col_name;
-    @FXML TableColumn<Ticket, String> col_surname;
-    @FXML TableColumn<Ticket, String> col_type;
-    @FXML TableColumn<Ticket, String> col_nameService;
-    @FXML TableColumn<Ticket, String> col_number;
-    @FXML TableColumn<Ticket, String> col_status;
-    @FXML TableColumn<Ticket, String> col_address;
-    @FXML TableColumn<Ticket, String> col_access;
+    @FXML TableView<Requests> table;
+    @FXML TableColumn<Requests, Integer> col_id;
+    @FXML TableColumn<Requests, String> col_name;
+    @FXML TableColumn<Requests, String> col_surname;
+    @FXML TableColumn<Requests, String> col_type;
+    @FXML TableColumn<Requests, String> col_nameService;
+    @FXML TableColumn<Requests, String> col_number;
+    @FXML TableColumn<Requests, String> col_status;
+    @FXML TableColumn<Requests, String> col_address;
+    @FXML TableColumn<Requests, String> col_access;
     @FXML Button backButton;
 
     @Override
@@ -54,7 +54,7 @@ public class TicketsController implements Initializable {
         ResultSet rs = connection.createStatement().executeQuery("select * from clientservices");
 
         while (rs.next()) {
-            list.add(new Ticket(Integer.parseInt(rs.getString(1)),
+            list.add(new Requests(Integer.parseInt(rs.getString(1)),
                     rs.getString(2), rs.getString(3),
                     rs.getString(4), rs.getString(5), rs.getString(6),
                     rs.getString(7), rs.getString(8), rs.getString(9)));
@@ -113,7 +113,7 @@ public class TicketsController implements Initializable {
         Pane root = fxmlLoader.load(getClass().getResource("administrator-window.fxml").openStream());
         Scene scene = new Scene(root, 700, 400);
         stage.setScene(scene);
-        stage.setTitle("Admin");
+        stage.setTitle("Table");
         stage.show();
         stage.setResizable(false);
     }

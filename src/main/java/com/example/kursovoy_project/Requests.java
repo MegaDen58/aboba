@@ -1,11 +1,11 @@
 package com.example.kursovoy_project;
 
-public class Ticket {
+public class Requests {
 
     int id;
     String name, surname, type, nameService, number, status, address, access;
 
-    public Ticket(int id, String name, String surname, String type, String nameService, String number, String status, String address, String access){
+    public Requests(int id, String name, String surname, String type, String nameService, String number, String status, String address, String access){
         this.id = id;
         this.name = name;
         this.surname = surname;

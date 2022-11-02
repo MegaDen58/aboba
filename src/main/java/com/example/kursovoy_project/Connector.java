@@ -6,7 +6,7 @@ import java.sql.DriverManager;
 public class Connector {
 
     public static Connection ConnectDb() throws Exception{
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/group", "root", "12345");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/allservices", "root", "159753");
         return con;
     }
 
