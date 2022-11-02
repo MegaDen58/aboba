@@ -54,22 +54,36 @@ public class ServicesController implements Initializable {
     }
 
     public void toAdd() throws Exception{
-        connection = Connector.ConnectDb();
-                PreparedStatement statement = connection.prepareStatement("insert into allservices " +
-                        "(Вид_услуги, Наименование_услуги, Срок_службы, Срок_выполнения, Цена) " +
-                        "values (?, ?, ?, ?, ?)");
 
-        statement.setString(1, type.getText());
-        statement.setString(2, name.getText());
-        statement.setString(3, workTime.getText());
-        statement.setString(4, time.getText());
-        statement.setString(5, price.getText());
+        String type1 = type.getText();
+        String name1 = name.getText();
+        String workTime1 = workTime.getText();
+        String time1 = time.getText();
+        String price1 = price.getText();
 
-        statement.execute();
+        if(type1.isEmpty() | name1.isEmpty() | workTime1.isEmpty() | time1.isEmpty() | price1.isEmpty()){
+            JOptionPane.showMessageDialog(null, "Ошибка обновления данных");
+        }
 
-        JOptionPane.showMessageDialog(null, "Запись добавлена!");
 
-        toDisplay();
+        else{
+            connection = Connector.ConnectDb();
+            PreparedStatement statement = connection.prepareStatement("insert into allservices " +
+                    "(Вид_услуги, Наименование_услуги, Срок_службы, Срок_выполнения, Цена) " +
+                    "values (?, ?, ?, ?, ?)");
+
+            statement.setString(1, type1);
+            statement.setString(2, name1);
+            statement.setString(3, workTime1);
+            statement.setString(4, time1);
+            statement.setString(5, price1);
+
+            statement.execute();
+
+            JOptionPane.showMessageDialog(null, "Запись добавлена!");
+
+            toDisplay();
+        }
     }
 
     public void toUpdate() throws Exception{
@@ -83,15 +97,20 @@ public class ServicesController implements Initializable {
             String time1 = time.getText();
             String price1 = price.getText();
 
+            if(id1.isEmpty() | type1.isEmpty() | name1.isEmpty() | workTime1.isEmpty() | time1.isEmpty() | price1.isEmpty()){
+                JOptionPane.showMessageDialog(null, "Ошибка обновления данных");
+            }
 
-            String sql = String.format("update allservices set Вид_услуги= '%s',Наименование_услуги= '%s', " +
-                            "Срок_службы= '%s', Срок_выполнения= '%s', Цена= '%s'  where id='%s'", type1, name1, workTime1,
-                    time1, price1, id1);
+            else {
+                String sql = String.format("update allservices set Вид_услуги= '%s',Наименование_услуги= '%s', " +
+                                "Срок_службы= '%s', Срок_выполнения= '%s', Цена= '%s'  where id='%s'", type1, name1, workTime1,
+                        time1, price1, id1);
 
-            PreparedStatement statement = connection.prepareStatement(sql);
-            statement.execute();
-            JOptionPane.showMessageDialog(null, "Запись обновлена!");
-            toDisplay();
+                PreparedStatement statement = connection.prepareStatement(sql);
+                statement.execute();
+                JOptionPane.showMessageDialog(null, "Запись обновлена!");
+                toDisplay();
+            }
 
     }
 

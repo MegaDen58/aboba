@@ -103,7 +103,7 @@ public class RoleController {
     public void toLogin() throws Exception{
 
         if(status.equals("admin") && authLogin.getText().equals("admin")){
-            if(checkPassword(authLogin.getText(), "administrator-window.fxml", 700, 400)){
+            if(checkPassword(authLogin.getText(),authPassword.getText(), "administrator-window.fxml", 700, 400)){
                 stage.setTitle("Table");
                 Stage stageToCloseClient = (Stage) authButton.getScene().getWindow();
                 stageToCloseClient.close();
@@ -112,7 +112,7 @@ public class RoleController {
         }
 
         else if(status.equals("executor") && authLogin.getText().equals("executor")){
-            if(checkPassword(authLogin.getText(), "executor.fxml", 800, 500)){
+            if(checkPassword(authLogin.getText(),authPassword.getText(), "executor.fxml", 800, 500)){
                 stage.setTitle("Executor");
                 Stage stageToCloseClient = (Stage) authButton.getScene().getWindow();
                 stageToCloseClient.close();
@@ -121,7 +121,7 @@ public class RoleController {
         }
 
         else if(status.equals("client")){
-            if(checkPassword(authLogin.getText(), "user-request-form-window.fxml", 700, 400)){
+            if(checkPassword(authLogin.getText(),authPassword.getText(), "user-request-form-window.fxml", 700, 400)){
                 stage.setTitle("Requests Form");
                 Stage stageToCloseClient = (Stage) authButton.getScene().getWindow();
                 stageToCloseClient.close();
@@ -131,11 +131,10 @@ public class RoleController {
         else{
             JOptionPane.showMessageDialog(null, "Ошибка авторизации!");
         }
-
     }
-    public boolean checkPassword(String login, String window, int v, int v1) throws Exception{
+    public boolean checkPassword(String login, String password, String window, int v, int v1) throws Exception{
 
-        if(login.isEmpty()){
+        if(login.isEmpty() | password.isEmpty()){
             return false;
         }
         else{

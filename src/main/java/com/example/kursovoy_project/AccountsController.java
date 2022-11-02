@@ -49,16 +49,21 @@ public class AccountsController implements Initializable {
             String name1 = name.getText();
             String surname1 = surname.getText();
 
+            if(id1.isEmpty() | login1.isEmpty() | password1.isEmpty() | name1.isEmpty() | surname1.isEmpty()){
+                JOptionPane.showMessageDialog(null, "Ошибка обновления данных");
+            }
 
-            String sql = String.format("update accounts set Логин= '%s',Пароль= '%s', " +
-                            "Имя= '%s'," +
-                            "Фамилия= '%s' where id='%s'", login1,
-                    password1, name1, surname1, id1);
+            else{
+                String sql = String.format("update accounts set Логин= '%s',Пароль= '%s', " +
+                                "Имя= '%s'," +
+                                "Фамилия= '%s' where id='%s'", login1,
+                        password1, name1, surname1, id1);
 
-            PreparedStatement statement = connection.prepareStatement(sql);
-            statement.execute();
-            JOptionPane.showMessageDialog(null, "Запись обновлена!");
-            toDisplay();
+                PreparedStatement statement = connection.prepareStatement(sql);
+                statement.execute();
+                JOptionPane.showMessageDialog(null, "Запись обновлена!");
+                toDisplay();
+            }
         }
         catch (Exception exception){
             System.out.println(exception);
