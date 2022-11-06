@@ -58,7 +58,7 @@ public class RoleController {
         }
     }
 
-    public void getAdminButton() throws Exception{
+    public void getAdminButton() throws Exception{ // При выборе роли админ, помещается в статус админ
         status = "admin";
 
         Stage stageToCloseAdmin = (Stage) btnAdmin.getScene().getWindow();
@@ -72,7 +72,7 @@ public class RoleController {
         stage.show();
     }
 
-    public void getExecutorButton() throws Exception{
+    public void getExecutorButton() throws Exception{ // При выборе роли исполнитель, помещается в статус исполнитель
         status = "executor";
 
         Stage stageToCloseExecutor = (Stage) btnExecutor.getScene().getWindow();
@@ -86,7 +86,7 @@ public class RoleController {
         stage.show();
     }
 
-    public void getClientButton() throws Exception{
+    public void getClientButton() throws Exception{ // При выборе роли клиент, помещается в статус клиент
         status = "client";
 
         Stage stageToCloseClient = (Stage) btnClient.getScene().getWindow();
@@ -100,7 +100,7 @@ public class RoleController {
         stage.show();
     }
 
-    public void toLogin() throws Exception{
+    public void toLogin() throws Exception{ // Запускается нужное окно в зависимости от статуса + проверяется пароль выбранной роли
 
         if(status.equals("admin") && authLogin.getText().equals("admin")){
             if(checkPassword(authLogin.getText(),authPassword.getText(), "administrator-window.fxml", 700, 400)){
@@ -132,7 +132,7 @@ public class RoleController {
             JOptionPane.showMessageDialog(null, "Ошибка авторизации!");
         }
     }
-    public boolean checkPassword(String login, String password, String window, int v, int v1) throws Exception{
+    public boolean checkPassword(String login, String password, String window, int v, int v1) throws Exception{ // Проверяет логин и пароль, если истина - запускает окно
 
         if(login.isEmpty() | password.isEmpty()){
             return false;

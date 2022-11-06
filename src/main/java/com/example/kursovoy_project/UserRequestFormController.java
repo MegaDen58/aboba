@@ -97,7 +97,7 @@ public class UserRequestFormController implements Initializable {
         }
     }
 
-    public String nameOfService(String text){
+    public String nameOfService(String text){ // В названии услуги есть цена, чтобы она не заносилась в бд, удаляем её
         String[] words = text.split(" ");
         String toReturn = "";
         for(int i = 0; i < words.length - 2; i++){

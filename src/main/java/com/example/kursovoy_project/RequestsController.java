@@ -51,15 +51,16 @@ public class RequestsController implements Initializable {
     public void toDisplay() throws Exception {
         table.getItems().clear();
         connection = Connector.ConnectDb();
-        ResultSet rs = connection.createStatement().executeQuery("select * from clientservices");
+        ResultSet rs = connection.createStatement().executeQuery("select * from clientservices"); // Берём всё из базы данных
 
-        while (rs.next()) {
-            list.add(new Requests(Integer.parseInt(rs.getString(1)),
+        while (rs.next()) { // получаем значения
+            list.add(new Requests(Integer.parseInt(rs.getString(1)), // Создаём экземпляр класса и заносим в его конструктор все значения из бд
                     rs.getString(2), rs.getString(3),
                     rs.getString(4), rs.getString(5), rs.getString(6),
                     rs.getString(7), rs.getString(8), rs.getString(9)));
         }
 
+        // В столбики помещаем значения из бд
         col_id.setCellValueFactory(new PropertyValueFactory<>("id"));
         col_name.setCellValueFactory(new PropertyValueFactory<>("name"));
         col_surname.setCellValueFactory(new PropertyValueFactory<>("surname"));
@@ -86,7 +87,7 @@ public class RequestsController implements Initializable {
         }
     }
 
-    public void toAccess() throws Exception{
+    public void toAccess() throws Exception{ // Ставит статус Проверено-"ДА", когда кнопка нажмётся
         connection = Connector.ConnectDb();
         String sql = String.format("update clientservices set Проверено='Да' where id='%s'", id);
         PreparedStatement statement = connection.prepareStatement(sql);
@@ -95,7 +96,7 @@ public class RequestsController implements Initializable {
         toDisplay();
     }
 
-    public void toDelete() throws Exception{
+    public void toDelete() throws Exception{ // Удаляет из бд, имея ид
         connection = Connector.ConnectDb();
         String sql = String.format("DELETE from clientservices WHERE id='%s'", id);
         PreparedStatement statement = connection.prepareStatement(sql);

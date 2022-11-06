@@ -46,7 +46,7 @@ public class ServicesController implements Initializable {
     public void toDelete() throws Exception{
         connection = Connector.ConnectDb();
         String id1 = id.getText();
-        String sql = String.format("DELETE from allservices WHERE id='%s'", id1);
+        String sql = String.format("DELETE from allservices WHERE id='%s'", id1); // Удаляет всё, где ид равен выбранному ид
         PreparedStatement statement = connection.prepareStatement(sql);
         statement.execute();
         JOptionPane.showMessageDialog(null, "Запись удалена!");
@@ -55,28 +55,30 @@ public class ServicesController implements Initializable {
 
     public void toAdd() throws Exception{
 
+        String id1 = id.getText();
         String type1 = type.getText();
         String name1 = name.getText();
         String workTime1 = workTime.getText();
         String time1 = time.getText();
         String price1 = price.getText();
 
-        if(type1.isEmpty() | name1.isEmpty() | workTime1.isEmpty() | time1.isEmpty() | price1.isEmpty()){
+        if(type1.isEmpty() | name1.isEmpty() | workTime1.isEmpty() | time1.isEmpty() | price1.isEmpty() | id1.isEmpty()){ // Проверка, что строки не пустые
             JOptionPane.showMessageDialog(null, "Ошибка обновления данных");
         }
 
 
-        else{
+        else{ // помещает в базу данных новые значения
             connection = Connector.ConnectDb();
             PreparedStatement statement = connection.prepareStatement("insert into allservices " +
-                    "(Вид_услуги, Наименование_услуги, Срок_службы, Срок_выполнения, Цена) " +
-                    "values (?, ?, ?, ?, ?)");
+                    "(id,Вид_услуги, Наименование_услуги, Срок_службы, Срок_выполнения, Цена) " +
+                    "values (?, ?, ?, ?, ?, ?)");
 
-            statement.setString(1, type1);
-            statement.setString(2, name1);
-            statement.setString(3, workTime1);
-            statement.setString(4, time1);
-            statement.setString(5, price1);
+            statement.setString(1, id1);
+            statement.setString(2, type1);
+            statement.setString(3, name1);
+            statement.setString(4, workTime1);
+            statement.setString(5, time1);
+            statement.setString(6, price1);
 
             statement.execute();
 
@@ -101,7 +103,7 @@ public class ServicesController implements Initializable {
                 JOptionPane.showMessageDialog(null, "Ошибка обновления данных");
             }
 
-            else {
+            else { // Обновляет значение ниже, где ид равен выбранному
                 String sql = String.format("update allservices set Вид_услуги= '%s',Наименование_услуги= '%s', " +
                                 "Срок_службы= '%s', Срок_выполнения= '%s', Цена= '%s'  where id='%s'", type1, name1, workTime1,
                         time1, price1, id1);
